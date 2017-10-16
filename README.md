@@ -1,2 +1,2 @@
 # work-samples
-Arbeitsproben für Interlutions GmbH
+Arbeitsproben für Bewerbungszwecke
