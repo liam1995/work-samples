@@ -1,0 +1,570 @@
+﻿html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: url('../images/back.jpg');
+    background-size: cover;
+    -webkit-user-select: none;
+}
+
+* {
+    outline: none;
+}
+
+#master {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    color: white;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    box-shadow: 0 0 4px black;
+    margin: 0 auto;
+}
+
+.select-on {
+    animation: select-on 1s ease forwards;
+}
+
+.select-off {
+    animation: select-off 1s ease forwards;
+}
+
+#player h1 {
+    color: white;
+    font-size: 1em;
+    font-family: verdana;
+    text-shadow: 0 0 8px blue;
+}
+
+.char-skill button {
+    box-shadow: 0 0 2px 0px black;
+    border: 1px solid silver;
+    transition: 0.25s ease;
+}
+
+.char-skill button:focus {
+        border: 1px solid blue;
+        box-shadow: 0 0 8px 0 blue;
+        transition: 0.25s ease;
+        filter: brightness(110%);
+        -webkit-filter: brightness(110%);
+}
+
+.fadein {
+    animation: fadein 0.5s ease forwards;
+}
+
+#player {
+    position: fixed;
+    top: 23%;
+    height: 100%;
+    width: 100%;
+}
+
+#playerbtn {
+    position: fixed;
+    left: 2%;
+    top: 1%;
+    height: 50px;
+    width: 50px;
+    box-shadow: 0 0 2px 0px black;
+    border: 1px solid silver;
+    transition: 0.25s ease;
+    background: url('../images/profile.jpg');
+}
+
+    #playerbtn:focus {
+        border: 1px solid blue;
+        box-shadow: 0 0 8px 0 blue;
+        transition: 0.25s ease;
+        filter: brightness(110%);
+        -webkit-filter: brightness(110%);
+    }
+
+#playername {
+    position: fixed;
+    left: 20%;
+    top: 1%;
+}
+
+#playerback {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 10%;
+    width: 100%;
+    background: rgba(50, 50, 50, 0.7);
+    z-index: -1;
+}
+
+.playerenergy {
+    position: fixed;
+    right: 5%;
+    top: 3%;
+    height: 2%;
+    width: 4%;
+    background: black;
+}
+
+#playerenergy1 {
+    margin-right: 0%;
+    background: white;
+}
+
+#playerenergy2 {
+    margin-right: 10%;
+    background: yellow;
+}
+
+#playerenergy3 {
+    margin-right: 20%;
+    background: blue;
+}
+
+#playerenergy4 {
+    margin-right: 30%;
+    background: red;
+}
+
+.turn {
+    position: fixed;
+    left: 0;
+    top: 12%;
+    height: 5%;
+}
+
+#turnbtn {
+    width: 100%;
+    background: transparent;
+    border-color: silver;
+    border-style: solid;
+    border-width: 1px 0 1px 0;
+    z-index: 99;
+}
+
+#turnmask {
+    width: 100%;
+    opacity: 0.7;
+    z-index: -1;
+}
+
+#turn {
+    width: 100%;
+    color: white;
+    font-size: 1em;
+    text-shadow: 0 0 2px black;
+    background: transparent;
+    z-index: 1;
+}
+
+#turn p {
+        position: fixed;
+        left: 42%;
+        top: 10.5%;
+}
+
+.team {
+    position: fixed;
+    left: -1%;
+    top: 25%;
+    width: 100%;
+    filter: brightness(90%);
+    -webkit-filter: brightness(90%);
+    z-index: 1;
+}
+
+.char {
+    height: 75px;
+    width: 75px;
+    margin-left: 2%;
+    margin-top: 2%;
+}
+
+#char1 {
+    margin-top: -10%;
+}
+
+.state {
+}
+
+.statebar {
+    position: fixed;
+    right: 0;
+    height: 4%;
+    width: 100%;
+    background: rgba(50, 50, 50, 0.7);
+    z-index: -1;
+    opacity: 0;
+}
+
+#statebar1 {
+    top: 19%;
+}
+
+#statebar2 {
+    top: 37.5%;
+}
+
+#statebar3 {
+    top: 55.5%;
+}
+
+.skill {
+    height: 50px;
+    width: 50px;
+    margin-left: 2%;
+    margin-top: 1%;
+}
+
+.hpstat {
+    position: fixed;
+    left: 5%;
+    top: 32%;
+    height: 3%;
+    width: 90%;
+    background: linear-gradient(darkgreen, lime, darkgreen);
+}
+
+.hpstat p {
+        position: fixed;
+        left: 40%;
+        top: 29.5%;
+        color: white;
+        -webkit-text-stroke: 0.1px white;
+        text-shadow: 0 0 4px lime;
+        font-size: 1em;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        z-index: 99;
+}
+
+
+#hpmask1 {
+    width: 90%;
+    z-index: -1;
+    filter: brightness(50%);
+    -webkit-filter: brightness(50%);
+}
+
+#hpanim1 {
+    width: 90%;
+    background: url('../images/anim/hp-anim.gif');
+    z-index: 1;
+    animation: hpdrop1 2s linear forwards;
+}
+
+#hpval1 {
+    width: 90%;
+    border-color: white;
+    border-style: solid;
+    border-width: 0 1px 0 0;
+    animation: hpdrop1 2s linear forwards;
+}
+
+#hpstyle1 {
+    width: 90%;
+    border: 1px solid black;
+    background: transparent;
+    z-index: 1;
+}
+
+#hp1 {
+
+}
+
+#hpmask2 {
+    margin-top: 34%;
+    width: 90%;
+    z-index: -1;
+    filter: brightness(50%);
+    -webkit-filter: brightness(50%);
+}
+
+#hpanim2 {
+    margin-top: 34%;
+    width: 50%;
+    background: url('../images/anim/hp-anim.gif');
+    z-index: 1;
+    animation: hpdrop2 2s linear forwards;
+}
+
+#hpval2 {
+    margin-top: 34%;
+    width: 50%;
+    border-color: white;
+    border-style: solid;
+    border-width: 0 1px 0 0;
+    animation: hpdrop2 2s linear forwards;
+}
+
+#hpstyle2 {
+    margin-top: 34%;
+    width: 90%;
+    border: 1px solid black;
+    background: transparent;
+    z-index: 1;
+}
+
+#hp2 {
+    margin-top: 38.5%;
+}
+
+#hpmask3 {
+    margin-top: 68%;
+    width: 90%;
+    z-index: -1;
+    filter: brightness(50%);
+    -webkit-filter: brightness(50%);
+}
+
+#hpanim3 {
+    margin-top: 68%;
+    width: 30%;
+    background: url('../images/anim/hp-anim.gif');
+    z-index: 1;
+    animation: hpdro3 2s linear forwards;
+}
+
+
+#hpval3 {
+    margin-top: 68%;
+    width: 30%;
+    border-color: white;
+    border-style: solid;
+    border-width: 0 1px 0 0;
+    animation: hpdrop3 2s linear forwards;
+}
+
+#hpstyle3 {
+    margin-top: 68%;
+    width: 90%;
+    border: 1px solid black;
+    background: transparent;
+    z-index: 1;
+}
+
+#hp3 {
+    margin-top: 72.5%;
+}
+
+#infoback {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    height: 25%;
+    width: 100%;
+    background: rgba(50, 50, 50, 0.7);
+}
+
+#infohead {
+    margin-left: 15%;
+}
+
+#infobtn {
+    margin-left: -80%;
+    margin-top: -20%;
+    z-index: 1;
+}
+
+#infotxt {
+    position: fixed;
+    left: 19%;
+    bottom: -8%;
+    height: inherit;
+    width: 80%;
+    color: white;
+    font-size: 0.8em;
+    font-family: verdana;
+    text-shadow: 0 0 2px black;
+}
+
+#infocost {
+    height: 100%;
+}
+
+.cost {
+    margin-left: 8%;
+    margin-top: 1%;
+    height: 8%;
+    width: 4%;
+    border: 0px solid silver;
+}
+
+.infoset {
+    position: fixed;
+    bottom: -1%;
+    color: silver;
+    font-size: 0.8em;
+}
+
+#infocd {
+    right: 5%;
+}
+
+#infotype {
+    right: 29.5%;
+}
+
+.useback {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 99;
+}
+
+@keyframes hpval {
+    from {
+    }
+
+    to {
+        background-image: url('../images/anim/hp-anim.gif');
+    }
+}
+
+@keyframes player-1 {
+    from {
+        box-shadow: inset 0 0 4px black;
+    }
+
+    to {
+        box-shadow: inset 0 0 8px blue;
+    }
+}
+
+@keyframes player-2 {
+    from {
+        box-shadow: inset 0 0 4px black;
+    }
+
+    to {
+        box-shadow: inset 0 0 8px red;
+    }
+}
+
+@keyframes turn-1 {
+    from {
+        box-shadow: 0 0 4px black;
+    }
+
+    to {
+        box-shadow: 0 0 16px blue;
+    }
+}
+
+@keyframes turn-2 {
+    from {
+        box-shadow: 0 0 4px black;
+    }
+
+    to {
+        box-shadow: 0 0 16px red;
+    }
+}
+
+@keyframes nextplayer {
+    0% {
+        opacity: 1;
+        left: -1%;
+    }
+
+    50% {
+        opacity: 0;
+        left: -100%;
+    }
+
+    100% {
+        opacity: 1;
+        left: -1%;
+    }
+}
+
+@keyframes timer {
+    from {
+        width: 100%;
+    }
+
+    to {
+        width: 0;
+    }
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeout {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes hpdrop1 {
+    from {
+        width: 90%;
+    }
+
+    to {
+        width: 70%;
+    }
+}
+
+@keyframes hpdrop2 {
+    from {
+        width: 90%;
+    }
+
+    to {
+        width: 50%;
+    }
+}
+
+@keyframes hpdrop3 {
+    from {
+        width: 90%;
+    }
+
+    to {
+        width: 30%;
+    }
+}
+
+@keyframes hpdroptest {
+    from {
+        width: 70%;
+    }
+
+    to {
+        width: 50%;
+    }
+}
+
+@keyframes skill-to-char {
+    from {
+        border: 1px dashed yellow;
+        box-shadow: 0 0 8px yellow;
+    }
+
+    to {
+        border: 1px dashed orange;
+        box-shadow: 0 0 16px orange;
+    }
+}
